@@ -1,242 +1,430 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
+<!-- ================================================= -->
+<!-- CABEÇALHO DO SITE / CONFIGURAÇÕES / CSS -->
+<!-- ================================================= -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="description" content="Portfólio de Alessandra Galhardo. Analista de Dados, ADS, Especialista em SQL, Python e Gestão Administrativa. GitHub: AlessandraBJsilva">
-    <meta name="keywords" content="Alessandra Galhardo, AlessandraBJsilva, Analista de Dados, ADS, Python, Pandas, SQL, Salesforce, Bombeiro Civil">
-    <meta name="author" content="Alessandra Galhardo">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Alessandra Galhardo | Analista de Dados & Sistemas</title>
+<title>Alessandra Galhardo | Portfólio ADS</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        :root {
-            --primary: #2563eb;
-            --accent: #38bdf8;
-            --danger: #ef4444;
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-        }
+<style>
 
-        * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); margin: 0; line-height: 1.6; }
+:root{
+--primary:#a855f7;
+--secondary:#3b82f6;
+--bg-dark:#050505;
+--card-bg:rgba(20,20,20,0.9);
+--text-white:#ffffff;
+--text-gray:#a1a1aa;
+}
 
-        header {
-            height: 100vh; /* Aumentado um pouco para acomodar a foto */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
-            padding: 20px;
-        }
+*{box-sizing:border-box;margin:0;padding:0;}
 
-        /* ESTILO DA IMAGEM DE PERFIL */
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--accent);
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease;
-        }
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
+body{
+font-family:'Inter',sans-serif;
+background-color:var(--bg-dark);
+color:var(--text-white);
+line-height:1.6;
+overflow-x:hidden;
+}
 
-        .hero-title { font-size: clamp(2.5rem, 8vw, 4rem); margin: 0; color: var(--accent); font-weight: 700; }
-        .hero-subtitle { font-size: 1.2rem; color: var(--text-dim); margin: 20px 0; max-width: 800px; }
+#particles-js{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+background:linear-gradient(to bottom,#0f001a,#050505);
+}
 
-        .contact-bar { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
-        .contact-item { text-decoration: none; color: var(--text-main); font-size: 0.85rem; background: var(--bg-card); padding: 10px 18px; border-radius: 50px; border: 1px solid var(--primary); transition: 0.3s; display: flex; align-items: center; gap: 8px; }
-        .contact-item:hover { background: var(--primary); transform: translateY(-3px); }
+header{
+padding:60px 20px;
+text-align:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
 
-        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
-        section { margin-bottom: 80px; }
-        h2 { font-size: 2rem; margin-bottom: 30px; color: var(--accent); border-left: 5px solid var(--primary); padding-left: 15px; text-transform: uppercase; letter-spacing: 1px; }
+.profile-wrapper{
+position:relative;
+margin-bottom:25px;
+}
 
-        .card { background: var(--bg-card); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-bottom: 20px; }
-        
-        .tag { background: rgba(37, 99, 235, 0.15); color: var(--accent); padding: 4px 10px; border-radius: 5px; font-size: 0.8rem; margin: 3px; display: inline-block; border: 1px solid rgba(56, 189, 248, 0.3); }
+.profile-img{
+width:180px;
+height:180px;
+border-radius:50%;
+border:3px solid var(--primary);
+object-fit:cover;
+z-index:2;
+position:relative;
+box-shadow:0 0 20px rgba(168,85,247,0.5);
+}
 
-        /* Experiência */
-        .exp-item { border-bottom: 1px solid #334155; padding: 25px 0; }
-        .exp-item:last-child { border: none; }
-        .exp-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 10px; }
-        .exp-title { font-weight: 700; color: var(--text-main); font-size: 1.25rem; }
-        .exp-company { color: var(--accent); font-weight: 600; display: block; margin-bottom: 5px; }
-        .exp-date { color: var(--text-dim); font-size: 0.85rem; background: #0f172a; padding: 2px 8px; border-radius: 4px; }
-        .exp-desc { font-size: 0.95rem; color: #e2e8f0; text-align: justify; margin-top: 10px; }
+.profile-glow{
+position:absolute;
+top:-10px;
+left:-10px;
+right:-10px;
+bottom:-10px;
+background:linear-gradient(45deg,var(--primary),var(--secondary));
+border-radius:50%;
+filter:blur(15px);
+opacity:.6;
+}
 
-        /* Projetos */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .project-card { background: var(--bg-card); padding: 25px; border-radius: 12px; border-bottom: 4px solid var(--primary); transition: 0.3s; }
-        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .btn-github { display: inline-block; margin-top: 15px; color: var(--accent); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+.hero-title{
+font-family:'Orbitron',sans-serif;
+font-size:clamp(1.8rem,5vw,3rem);
+letter-spacing:2px;
+background:linear-gradient(to right,#fff,var(--primary),var(--secondary));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-        /* Cursos */
-        .cursos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-        .curso-card { background: rgba(15, 23, 42, 0.5); padding: 15px; border-radius: 10px; border: 1px solid #334155; }
-        .curso-info { font-size: 0.75rem; color: var(--accent); font-weight: bold; margin-top: 8px; display: block; }
+.contact-bar{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:25px;
+}
 
-        .info-badge { background: #0f172a; padding: 12px; border-radius: 8px; border-left: 3px solid var(--primary); font-size: 0.9rem; margin-bottom: 10px; }
-        .bombeiro-tag { background: linear-gradient(90deg, #ef444433, transparent); border-left: 4px solid var(--danger); padding: 20px; border-radius: 8px; margin: 20px 0; }
+.contact-link{
+text-decoration:none;
+color:#fff;
+padding:10px 20px;
+background:rgba(255,255,255,0.05);
+border:1px solid var(--primary);
+border-radius:50px;
+font-size:.85rem;
+transition:.3s;
+}
 
-        footer { text-align: center; padding: 50px; background: #070a13; color: var(--text-dim); }
-    </style>
+.contact-link:hover{
+background:var(--primary);
+transform:translateY(-3px);
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.main-card{
+background:var(--card-bg);
+border-radius:20px;
+padding:35px;
+margin-bottom:35px;
+border-left:6px solid var(--primary);
+}
+
+.nav-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+margin-bottom:30px;
+}
+
+.nav-item{
+background:var(--card-bg);
+padding:25px;
+border-radius:15px;
+text-align:center;
+cursor:pointer;
+transition:.3s;
+}
+
+.nav-item:hover{
+transform:translateY(-8px);
+}
+
+.content-section{
+display:none;
+background:var(--card-bg);
+padding:35px;
+border-radius:20px;
+margin-bottom:40px;
+}
+
+.tag{
+display:inline-block;
+background:rgba(59,130,246,.1);
+color:var(--secondary);
+padding:5px 12px;
+border-radius:6px;
+margin:5px;
+font-size:.85rem;
+border:1px solid var(--secondary);
+}
+
+.experience-item{
+margin-bottom:15px;
+padding:15px;
+border-radius:10px;
+background:rgba(255,255,255,.03);
+border-left:3px solid var(--secondary);
+}
+
+.edu-item{
+margin-bottom:20px;
+padding-left:15px;
+border-left:2px solid var(--primary);
+}
+
+</style>
 </head>
+
 <body>
 
-    <header>
-        <img src="foto-perfil.jpg" alt="Alessandra Galhardo" class="profile-img" data-aos="flip-left">
-        
-        <h1 class="hero-title" data-aos="zoom-out">Alessandra Galhardo</h1>
-        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-            <strong>Analista de Dados & Desenvolvimento de Sistemas</strong><br>
-            Foco em Resultados, Tecnologia e Resiliência Operacional
-        </p>
-        <div class="contact-bar" data-aos="fade-up" data-aos-delay="400">
-            <a href="https://github.com/AlessandraBJsilva" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
-            <a href="mailto:alessandra.barbosa@agiltec.com" class="contact-item"><i class="fas fa-envelope"></i> alessandra.barbosa@agiltec.com</a>
-            <a href="tel:11910365601" class="contact-item"><i class="fas fa-phone"></i> (11) 91036-5601</a>
-        </div>
-    </header>
+<div id="particles-js"></div>
 
-    <div class="container">
+<!-- ================================================= -->
+<!-- PERFIL / HEADER / CONTATOS -->
+<!-- ================================================= -->
 
-        <section id="resumo" data-aos="fade-up">
-            <h2><i class="fas fa-user-circle"></i> Resumo das Qualificações</h2>
-            <div class="card">
-                <p>Sou uma profissional versátil, com experiência como <strong>Auxiliar de Escritório, Auxiliar de Vendas, Recepcionista e Bombeiro Civil</strong>, atuando no atendimento ao público, organização de rotinas administrativas, apoio operacional e execução de atividades de prevenção e resposta a emergências.</p>
-                <p>Possuo formação técnica em <strong>Análise de Sistemas, Ciência de Dados e Bombeiro Civil</strong>, o que me permite unir conhecimento tecnológico à capacidade de atuação em situações críticas. Tenho inglês intermediário e facilidade na adaptação a novos processos, sistemas e ambientes de trabalho.</p>
-                <p>Atualmente estou no <strong>3º semestre da faculdade de Análise e Desenvolvimento de Sistemas</strong>, desenvolvendo habilidades em lógica de programação, análise de dados, banco de dados e desenvolvimento de soluções. Sou comprometida, responsável e focada em resultados, auxiliando no levantamento de informações, organização documental, resolução de problemas e melhoria contínua das atividades internas.</p>
-                
-                <div class="bombeiro-tag">
-                    <i class="fas fa-shield-alt"></i> <strong>Diferencial Competitivo:</strong> Capacidade comprovada de manter a calma e a eficiência em situações de alto estresse e emergências, integrando tecnologia e prontidão operacional.
-                </div>
-            </div>
-        </section>
+<header>
 
-        <section id="skills" data-aos="fade-up">
-            <h2><i class="fas fa-tools"></i> Tecnologias & Informações Adicionais</h2>
-            <div class="card">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                    <div>
-                        <h4 style="color: var(--accent);"><i class="fas fa-laptop-code"></i> Sistemas & Dev</h4>
-                        <span class="tag">Node.js</span> <span class="tag">Linux</span> <span class="tag">Oracle</span> 
-                        <span class="tag">Salesforce</span> <span class="tag">PayTrue</span> <span class="tag">HK</span> 
-                        <span class="tag">CPMAECH</span> <span class="tag">Django</span>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--accent);"><i class="fas fa-chart-bar"></i> Dados & Análise</h4>
-                        <span class="tag">Python (Pandas, NumPy)</span> <span class="tag">Matplotlib</span> 
-                        <span class="tag">Power BI</span> <span class="tag">MySQL</span> <span class="tag">SQL Server</span>
-                    </div>
-                    <div>
-                        <h4 style="color: var(--accent);"><i class="fas fa-id-badge"></i> Documentação</h4>
-                        <div class="info-badge">CND-B Ativa</div>
-                        <div class="info-badge">Passaporte</div>
-                        <div class="info-badge">Carteira Internacional (PID)</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="profile-wrapper">
+<div class="profile-glow"></div>
+<img src="foto-perfil.jpg" alt="Alessandra Galhardo" class="profile-img">
+</div>
 
-        <section id="projetos" data-aos="fade-up">
-            <h2><i class="fas fa-terminal"></i> Projetos e Repositórios</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <span class="tag">Python / Jupyter</span>
-                    <h3>Relatório Lógico</h3>
-                    <p>Desenvolvimento de análise lógica de dados estruturada para geração de relatórios de insights.</p>
-                    <a href="https://github.com/AlessandraBJsilva/AlessandraBJsilva/blob/main/Codigo%20relatorio%20logico.ipynb" target="_blank" class="btn-github"><i class="fab fa-github"></i> Ver Código</a>
-                </div>
-                <div class="project-card">
-                    <span class="tag">SQL</span>
-                    <h3>Modelagem de Dados</h3>
-                    <p>Criação e gerenciamento de bancos de dados para sistemas de agendamento e ERPs.</p>
-                </div>
-                <div class="project-card">
-                    <span class="tag">PHP / CRUD</span>
-                    <h3>Sistema de Gestão</h3>
-                    <p>CRUD completo para administração de clientes e registros financeiros.</p>
-                </div>
-            </div>
-        </section>
+<h1 class="hero-title">ALESSANDRA GALHARDO</h1>
 
-        <section id="experiencia" data-aos="fade-up">
-            <h2><i class="fas fa-history"></i> Experiência Profissional</h2>
-            <div class="card">
-                <div class="exp-item">
-                    <div class="exp-header"><span class="exp-title">Auxiliar de Financeiro</span><span class="exp-date">09/2022 - 05/2024</span></div>
-                    <span class="exp-company">MICRO UP EIRELLI</span>
-                    <p class="exp-desc">Auxilia no levantamento e acompanhamento das transações financeiras, organiza documento de contas a pagar e a receber e controla fluxo de caixa, a fim de monitorar o budget mensal.</p>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header"><span class="exp-title">Suporte ao Cliente</span><span class="exp-date">10/2021 - 02/2022</span></div>
-                    <span class="exp-company">BRASILUZ</span>
-                    <p class="exp-desc">Atendimento ativo e Receptivo, tratativas no Fale conosco, Chatbox e WhatsApp. Abertura e acompanhamento de ocorrências e ajuste de cadastro.</p>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header"><span class="exp-title">Gerente Administrativo Comercial</span><span class="exp-date">12/2016 - 12/2017</span></div>
-                    <span class="exp-company">Fonecar Informatica</span>
-                    <p class="exp-desc">Planejamento de produção, estocagem e logística. Supervisão de distribuição, controle de estoque (físico e administrativo), gestão de RMA e fechamento de orçamentos e vendas.</p>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header"><span class="exp-title">Recepcionista Administrativa</span><span class="exp-date">2016 (Múltiplos períodos)</span></div>
-                    <span class="exp-company">Fonecar Informatica / Tele. Eletrônicas Ltda.</span>
-                    <p class="exp-desc">Emissão de notas fiscais, vendas online (Mercado Livre), suporte a vendedores externos, organização de arquivos e controle financeiro auxiliar.</p>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header"><span class="exp-title">Secretária Administrativa Financeira</span><span class="exp-date">07/2015 - 03/2016</span></div>
-                    <span class="exp-company">Best Web Fast</span>
-                    <p class="exp-desc">Direção de serviços de secretaria, assessoria direta, gestão de correspondências e manutenção de arquivos.</p>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header"><span class="exp-title">Recepcionista Administrativa</span><span class="exp-date">08/2014 - 04/2015</span></div>
-                    <span class="exp-company">CAIXA ECONOMIA FEDERAL</span>
-                    <p class="exp-desc">Controle de contas a pagar/receber, emissão de NFs, elaboração de relatórios financeiros e coordenação do departamento de compras.</p>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header"><span class="exp-title">Atendente</span><span class="exp-date">10/2013 - 06/2014</span></div>
-                    <span class="exp-company">Ice Mellow</span>
-                    <p class="exp-desc">Atendimento ao cliente, recepção de mercadorias, precificação e organização de estoque.</p>
-                </div>
-            </div>
-        </section>
+<p style="color:var(--secondary);letter-spacing:3px;font-weight:bold;margin-top:10px;">
+ANALISTA DE DADOS & SISTEMAS
+</p>
 
-        <section id="cursos" data-aos="fade-up">
-            <h2><i class="fas fa-certificate"></i> Cursos & Educação</h2>
-            <div class="cursos-grid">
-                <div class="curso-card"><h4>SQL Server</h4><p>Impacta</p><span class="curso-info">2026 | < 40h</span></div>
-                <div class="curso-card"><h4>Software CEV-Pro</h4><p>Intelbras</p><span class="curso-info">2024 | < 40h</span></div>
-                <div class="curso-card"><h4>LGPD</h4><p>Bradesco Virtual</p><span class="curso-info">2024 | < 40h</span></div>
-                <div class="curso-card"><h4>Python Completo</h4><p>Curso em Vídeo</p><span class="curso-info">2024 | 360h</span></div>
-                <div class="curso-card"><h4>PHP / MySQL / JS</h4><p>Curso em Vídeo</p><span class="curso-info">2024 | < 40h</span></div>
-                <div class="curso-card"><h4>Excel</h4><p>Curso em Vídeo</p><span class="curso-info">2024 | < 40h</span></div>
-                <div class="curso-card"><h4>Bombeiro Civil</h4><p>Estrela de Davi</p><span class="curso-info">2018 | 360h</span></div>
-                <div class="curso-card"><h4>Assistente Adm.</h4><p>Aldeia do Futuro</p><span class="curso-info">2013 | 360h</span></div>
-            </div>
-        </section>
+<div class="contact-bar">
 
-    </div>
+<a href="https://www.linkedin.com/in/alessandra-barbosa-galhardo-011711367/" target="_blank" class="contact-link">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
 
-    <footer>
-        <p>Alessandra Galhardo | Analista de Dados & Sistemas | 2026</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">GitHub: AlessandraBJsilva</p>
-    </footer>
+<a href="https://github.com/AlessandraBJsilva" target="_blank" class="contact-link">
+<i class="fab fa-github"></i> GitHub
+</a>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+<a href="mailto:alessandra.barbosa@agiltec.com" class="contact-link">
+<i class="fas fa-envelope"></i> Email
+</a>
+
+<a href="tel:11910365601" class="contact-link">
+<i class="fas fa-phone"></i> (11) 91036-5601
+</a>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<!-- ================================================= -->
+<!-- RESUMO PROFISSIONAL -->
+<!-- ================================================= -->
+
+<section class="main-card">
+
+<h2><i class="fas fa-id-card"></i> RESUMO PROFISSIONAL</h2>
+
+<p>
+Estudante do <strong>3º semestre de Análise e Desenvolvimento de Sistemas – Anhanguera</strong>.
+Experiência nas áreas administrativa, financeira e suporte ao cliente. 
+Atualmente focada em análise de dados, automação e banco de dados utilizando Python e SQL.
+</p>
+
+</section>
+
+<!-- ================================================= -->
+<!-- MENU DE NAVEGAÇÃO -->
+<!-- ================================================= -->
+
+<div class="nav-grid">
+
+<div class="nav-item" onclick="toggle('tech')"><i class="fas fa-laptop-code"></i><h3>Tecnologias</h3></div>
+<div class="nav-item" onclick="toggle('exp')"><i class="fas fa-history"></i><h3>Experiência</h3></div>
+<div class="nav-item" onclick="toggle('proj')"><i class="fas fa-project-diagram"></i><h3>Projetos</h3></div>
+<div class="nav-item" onclick="toggle('edu')"><i class="fas fa-user-graduate"></i><h3>Educação</h3></div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- TECNOLOGIAS -->
+<!-- ================================================= -->
+
+<div id="tech" class="content-section">
+
+<h2>STACK TÉCNICA</h2>
+
+<span class="tag">Python</span>
+<span class="tag">SQL Server</span>
+<span class="tag">MySQL</span>
+<span class="tag">Power BI</span>
+<span class="tag">Node.js</span>
+<span class="tag">HTML</span>
+<span class="tag">JavaScript</span>
+<span class="tag">Salesforce</span>
+<span class="tag">Linux</span>
+
+</div>
+
+<!-- ================================================= -->
+<!-- EXPERIÊNCIA PROFISSIONAL -->
+<!-- ================================================= -->
+
+<div id="exp" class="content-section">
+
+<h2>EXPERIÊNCIA PROFISSIONAL</h2>
+
+<div class="experience-item"><strong>Analista Financeiro / Administrativo</strong> – Polo-Ar (2023 - Atual)</div>
+<div class="experience-item"><strong>Analista Suporte ao Cliente</strong> – Micro Up (2021 - 2022)</div>
+<div class="experience-item"><strong>Analista Atendimento Iluminação Pública</strong> – Brasiluz (2020 - 2021)</div>
+<div class="experience-item"><strong>Assistente Administrativo</strong> – No Fire Sistemas (2018 - 2019)</div>
+<div class="experience-item"><strong>Assistente Comercial</strong> – F-New Eletrônicos (2017 - 2018)</div>
+<div class="experience-item"><strong>Recepcionista Administrativa</strong> – Caixa Econômica (2014 - 2016)</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- PROJETOS -->
+<!-- ================================================= -->
+
+<div id="proj" class="content-section">
+
+<h2>PROJETOS</h2>
+
+<div class="experience-item">
+<strong>Relatório Lógico em Python</strong>
+<p>Projeto de análise de dados utilizando Python.</p>
+<a href="https://github.com/AlessandraBJsilva" target="_blank">Ver no GitHub</a>
+</div>
+
+<div class="experience-item">
+<strong>Modelagem de Banco de Dados</strong>
+<p>Estruturação de banco de dados SQL.</p>
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- FORMAÇÃO E CURSOS -->
+<!-- ================================================= -->
+
+<div id="edu" class="content-section">
+
+<h2>FORMAÇÃO & CURSOS</h2>
+
+<div class="edu-item">
+<strong>Análise e Desenvolvimento de Sistemas</strong><br>
+<small>Faculdade Anhanguera – 3º semestre</small>
+</div>
+
+<div class="edu-item">
+<strong>SQL Server – 40h</strong><br>
+<small>Impacta Treinamentos – Conclusão 28/02/2026</small>
+</div>
+
+<div class="edu-item">
+<strong>Python</strong><br>
+<small>Curso em Vídeo</small>
+</div>
+
+<div class="edu-item">
+<strong>JavaScript</strong><br>
+<small>Curso em Vídeo</small>
+</div>
+
+<div class="edu-item">
+<strong>HTML</strong><br>
+<small>Curso em Vídeo</small>
+</div>
+
+<div class="edu-item">
+<strong>MySQL</strong><br>
+<small>Curso em Vídeo</small>
+</div>
+
+<div class="edu-item">
+<strong>Scratch</strong><br>
+<small>Curso em Vídeo</small>
+</div>
+
+<div class="edu-item">
+<strong>Projeto Interface Gráfica com Python</strong><br>
+<small>Fundação Bradesco</small>
+</div>
+
+<div class="edu-item">
+<strong>Bombeiro Civil</strong><br>
+<small>Senac Jabaquara</small>
+</div>
+
+<div class="edu-item">
+<strong>Técnico Administrativo Financeiro</strong><br>
+<small>Aldeia do Futuro</small>
+</div>
+
+<div class="edu-item">
+<strong>Defesa IA 3.0 Operação</strong><br>
+<small>Intelbras</small>
+</div>
+
+<div class="edu-item">
+<strong>Software Intelbras CVE-Pro</strong><br>
+<small>Intelbras</small>
+</div>
+
+<div class="edu-item">
+<strong>Implementando Rota Estática</strong><br>
+<small>Intelbras</small>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- SCRIPTS -->
+<!-- ================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script>
+
+function toggle(id){
+
+const sections=document.querySelectorAll('.content-section')
+
+sections.forEach(s=>s.style.display='none')
+
+document.getElementById(id).style.display='block'
+
+}
+
+particlesJS("particles-js",{
+
+particles:{
+number:{value:80},
+color:{value:"#a855f7"},
+shape:{type:"circle"},
+opacity:{value:0.4},
+size:{value:3},
+move:{enable:true,speed:2}
+}
+
+})
+
+</script>
+
 </body>
 </html>
